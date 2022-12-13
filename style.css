@@ -1,0 +1,60 @@
+@keyframes beltRoll {
+    0% {transform: translateX(0)}
+    100% {transform: translateX(6.2vw)}
+}
+
+@keyframes fadeIn {
+    0% {opacity: 0}
+    50% {opacity: 1}
+    100% {opacity: 1}
+}
+
+@keyframes fadeOut {
+    0% {opacity: 1}
+    50% {opacity: 0}
+    100% {opacity: 0}
+}
+
+.conveyorBelt {
+    height: 100px;
+    width: 60%;
+    background-color: grey;
+    display: flex;
+    justify-content: space-between;
+}
+
+.conveyorBelt__joint {
+    width: 2px;
+    background-color: black;
+    animation-name: beltRoll;
+    animation-timing-function: linear;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+
+.conveyorBelt__joint--first, 
+.conveyorBelt__joint--last {
+    opacity: 0;
+}
+
+.conveyorBelt__joint--first {
+    animation-name: fadeIn, beltRoll;
+    animation-timing-function: ease-in;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+
+.conveyorBelt__joint--last {
+    animation-name: fadeOut, beltRoll;
+    animation-timing-function: ease-out;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+
+.conveyorBelt__joint--internal{
+    animation-name: beltRoll;
+    animation-timing-function: linear;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+
